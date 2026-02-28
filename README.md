@@ -1,7 +1,7 @@
 # Left Shift Program - Intelligent App Dev (.Net)
 **JECRC, Jaipur | Batch T2 | Feb 2026**
 
-Training by Capgemini covering C#, .NET fundamentals, and web technologies — organized day-wise.
+Training by Capgemini covering C#, .NET fundamentals, and web technologies - organized day-wise.
 
 ---
 
