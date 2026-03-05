@@ -7,7 +7,6 @@ Scenario:
 In an online shopping website, when a user clicks Add to Cart, the product should be added to the cart and a message displayed.
 
 Requirement
-
 Use click event
 
 Display product name in console
