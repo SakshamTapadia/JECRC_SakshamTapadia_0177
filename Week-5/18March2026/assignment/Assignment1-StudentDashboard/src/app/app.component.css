@@ -1,4 +1,4 @@
-/* Dashboard Container */
+Simple Styles
 .dashboard-container {
   max-width: 1200px;
   margin: 20px auto;
@@ -17,6 +17,12 @@
 
 .dashboard-header h1 {
   margin: 0;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
 }
 
 /* Statistics Cards */
@@ -101,6 +107,10 @@
   font-weight: bold;
 }
 
+.trophy {
+  margin-left: 5px;
+}
+
 /* Grade Badges - using ngClass */
 .grade-badge {
   padding: 4px 10px;
@@ -151,6 +161,10 @@
 }
 
 /* Grade Descriptions - using ngSwitch */
+.grade-desc {
+  padding: 4px 8px;
+}
+
 .grade-desc.excellent {
   color: green;
 }
@@ -169,4 +183,57 @@
 
 .grade-desc.failed {
   color: red;
+}
+
+/* Legend */
+.legend-section {
+  margin-top: 30px;
+  padding: 15px;
+  border-top: 2px solid #ddd;
+}
+
+.legend-section h3 {
+  margin-top: 0;
+}
+
+.legend-items {
+  display: flex;
+  gap: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-color {
+  width: 30px;
+  height: 20px;
+  border: 1px solid #333;
+}
+
+.topper-color {
+  background-color: #fff9c4;
+}
+
+.pass-color {
+  background-color: lightgreen;
+}
+
+.fail-color {
+  background-color: lightcoral;
+}
+
+/* Footer */
+.dashboard-footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #333;
+  color: white;
+}
+
+.dashboard-footer p {
+  margin: 0;
 }
