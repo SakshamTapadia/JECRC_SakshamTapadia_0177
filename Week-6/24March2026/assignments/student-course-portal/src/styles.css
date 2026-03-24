@@ -1,0 +1,182 @@
+/* Global Reset & Base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  color: #2d3748;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2b6cb0;
+  padding: 0 2rem;
+  height: 60px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.navbar .brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nav-links { display: flex; gap: 1.5rem; }
+
+.nav-links a {
+  color: #bee3f8;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+/* Main Content */
+.main-content { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.85; }
+.btn-primary { background: #2b6cb0; color: #fff; }
+.btn-secondary { background: #718096; color: #fff; }
+.btn-outline { background: transparent; color: #2b6cb0; border: 2px solid #2b6cb0; }
+
+/* Course Grid */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.course-card h3 { font-size: 1.1rem; color: #1a365d; }
+.course-card .instructor { color: #555; font-size: 0.9rem; }
+.course-card .duration { color: #666; font-size: 0.85rem; }
+.course-card .description { color: #4a5568; font-size: 0.88rem; flex: 1; }
+.course-card .btn { margin-top: auto; align-self: flex-start; }
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: #ebf8ff;
+  color: #2b6cb0;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Dashboard Hero */
+.hero {
+  background: linear-gradient(135deg, #2b6cb0, #4299e1);
+  color: #fff;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 { font-size: 2rem; margin-bottom: 0.75rem; }
+.hero p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.5rem; }
+.quick-links { display: flex; gap: 1rem; justify-content: center; }
+
+/* Course Detail */
+.course-detail-page { max-width: 700px; margin: 0 auto; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; color: #2b6cb0; font-weight: 600; }
+.back-link:hover { text-decoration: underline; }
+
+.detail-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-card h1 { font-size: 1.8rem; color: #1a365d; }
+.detail-card .instructor, .detail-card .duration { font-size: 0.95rem; color: #555; }
+.detail-card .description { font-size: 1rem; color: #4a5568; line-height: 1.6; margin-top: 0.5rem; }
+
+/* Profile */
+.profile-page { max-width: 600px; margin: 0 auto; }
+.profile-page h1 { margin-bottom: 1.5rem; font-size: 1.8rem; color: #1a365d; }
+
+.profile-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #2b6cb0;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-info { display: flex; flex-direction: column; gap: 0.4rem; }
+.profile-info h2 { font-size: 1.3rem; color: #1a365d; }
+.profile-info p { font-size: 0.9rem; color: #555; }
+
+.status-active {
+  color: #276749;
+  background: #c6f6d5;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+}
+
+.profile-actions { display: flex; gap: 1rem; }
+
+/* 404 Page */
+.not-found-page {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+.not-found-page h1 { font-size: 6rem; color: #cbd5e0; font-weight: 800; }
+.not-found-page h2 { font-size: 1.8rem; color: #2d3748; margin-bottom: 1rem; }
+.not-found-page p { color: #718096; margin-bottom: 2rem; }
+
+.not-found { text-align: center; padding: 3rem; }

@@ -1,0 +1,23 @@
+<div class="dashboard">
+  <div class="hero">
+    <h1>Welcome to the Student Course Portal</h1>
+    <p>Explore courses, track your progress, and manage your profile.</p>
+    <div class="quick-links">
+      <a routerLink="/courses" class="btn btn-primary">Browse All Courses</a>
+      <a routerLink="/profile" class="btn btn-secondary">My Profile</a>
+    </div>
+  </div>
+
+  <section class="featured">
+    <h2>Featured Courses</h2>
+    <div class="course-grid">
+      <div class="course-card" *ngFor="let course of featuredCourses">
+        <span class="badge">{{ course.category }}</span>
+        <h3>{{ course.title }}</h3>
+        <p class="instructor">by {{ course.instructor }}</p>
+        <p class="duration">Duration: {{ course.duration }}</p>
+        <a [routerLink]="['/course', course.id]" class="btn btn-outline">View Details</a>
+      </div>
+    </div>
+  </section>
+</div>

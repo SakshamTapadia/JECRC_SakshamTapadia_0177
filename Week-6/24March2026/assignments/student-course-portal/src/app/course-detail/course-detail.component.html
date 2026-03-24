@@ -1,0 +1,17 @@
+<div class="course-detail-page" *ngIf="course; else notFound">
+  <a routerLink="/courses" class="back-link">← Back to Courses</a>
+  <div class="detail-card">
+    <span class="badge">{{ course.category }}</span>
+    <h1>{{ course.title }}</h1>
+    <p class="instructor">Instructor: <strong>{{ course.instructor }}</strong></p>
+    <p class="duration">Duration: <strong>{{ course.duration }}</strong></p>
+    <p class="description">{{ course.description }}</p>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <div class="not-found">
+    <h2>Course not found.</h2>
+    <a routerLink="/courses" class="btn btn-primary">Back to Courses</a>
+  </div>
+</ng-template>
