@@ -1,23 +1,24 @@
-<h1>Product List</h1>
+<div class="product-list-container">
+  <h2 class="page-title">Product List</h2>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let product of products">
-      <td>{{ product.productId }}</td>
-      <td>
-        <a [routerLink]="['/product', product.productId]">
-          {{ product.Name }}
-        </a>
-      </td>
-      <td>{{ product.Price }}</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.productId }}</td>
+        <td>{{ product.Name }}</td>
+        <td class="price">${{ product.Price }}</td>
+        <td>
+          <a [routerLink]="['/product', product.productId]" class="view-btn">View Details</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

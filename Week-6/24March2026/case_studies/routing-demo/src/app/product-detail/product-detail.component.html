@@ -1,0 +1,19 @@
+<div class="detail-container">
+  <div *ngIf="product; else notFound" class="product-card">
+    <div class="product-badge">ID #{{ product.productId }}</div>
+    <h2 class="product-name">{{ product.Name }}</h2>
+    <div class="product-price">
+      <span class="price-label">Price</span>
+      <span class="price-value">${{ product.Price }}</span>
+    </div>
+    <a routerLink="/product" class="back-btn">&#8592; Back to Products</a>
+  </div>
+
+  <ng-template #notFound>
+    <div class="not-found">
+      <h2>Product Not Found</h2>
+      <p>No product exists with the given ID.</p>
+      <a routerLink="/product" class="back-btn">&#8592; Back to Products</a>
+    </div>
+  </ng-template>
+</div>
