@@ -1,0 +1,58 @@
+<h2>Task List</h2>
+
+<div>
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search tasks..."
+    name="search"
+  />
+  <button (click)="onSearch()">Search</button>
+  <button (click)="searchTerm = ''; loadTasks()">Reset</button>
+</div>
+
+@if (message) {
+  <p>{{ message }}</p>
+}
+
+@if (tasks.length === 0) {
+  <p>No tasks found.</p>
+} @else {
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Completed</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (task of tasks; track task.id) {
+        <tr>
+          <td>{{ task.id }}</td>
+          <td>
+            @if (editingTaskId === task.id) {
+              <input type="text" [(ngModel)]="editTitle" name="editTitle" />
+            } @else {
+              {{ task.title }}
+            }
+          </td>
+          <td>{{ task.completed ? 'Yes' : 'No' }}</td>
+          <td>
+            @if (editingTaskId === task.id) {
+              <button (click)="saveEdit(task)">Save</button>
+              <button (click)="cancelEdit()">Cancel</button>
+            } @else {
+              <button (click)="startEdit(task)">Edit</button>
+              <button (click)="toggleCompleted(task)">
+                {{ task.completed ? 'Mark Incomplete' : 'Mark Complete' }}
+              </button>
+              <button (click)="deleteTask(task)">Delete</button>
+            }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}
