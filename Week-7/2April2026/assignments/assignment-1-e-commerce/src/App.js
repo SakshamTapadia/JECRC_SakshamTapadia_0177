@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import { AuthProvider } from './context/AuthContext';
+import { CartProvider } from './context/CartContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import MainLayout from './components/MainLayout';
 import AuthLayout from './components/AuthLayout';
@@ -22,44 +23,46 @@ import Specs from './pages/Specs';
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Routes>
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
 
-          {/* Public Website - MainLayout */}
-          <Route element={<MainLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/products" element={<ProductList />} />
-            <Route path="/products/:productId" element={<ProductDetail />}>
-              <Route index element={<Navigate to="reviews" replace />} />
-              <Route path="reviews" element={<Reviews />} />
-              <Route path="specs" element={<Specs />} />
+            {/* Public — MainLayout (header + sidebar + footer) */}
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/products" element={<ProductList />} />
+              <Route path="/products/:productId" element={<ProductDetail />}>
+                <Route index element={<Navigate to="reviews" replace />} />
+                <Route path="reviews" element={<Reviews />} />
+                <Route path="specs" element={<Specs />} />
+              </Route>
             </Route>
-          </Route>
 
-          {/* Authentication - AuthLayout */}
-          <Route element={<AuthLayout />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Route>
+            {/* Auth — minimal centered layout */}
+            <Route element={<AuthLayout />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Route>
 
-          {/* Dashboard - Protected + DashboardLayout */}
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <DashboardLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route index element={<DashboardHome />} />
-            <Route path="analytics" element={<Analytics />} />
-            <Route path="settings" element={<Settings />} />
-          </Route>
+            {/* Dashboard — protected */}
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<DashboardHome />} />
+              <Route path="analytics" element={<Analytics />} />
+              <Route path="settings" element={<Settings />} />
+            </Route>
 
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </AuthProvider>
   );
 }
