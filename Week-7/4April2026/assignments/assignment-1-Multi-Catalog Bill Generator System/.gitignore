@@ -1,0 +1,30 @@
+# ── Frontend (Node / Vite) ───────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# ── Backend (.NET) ───────────────────────────────────────────────────────────
+backend/bin/
+backend/obj/
+backend/*.db
+backend/*.db-shm
+backend/*.db-wal
+backend/appsettings.Development.json
+
+# ── Root leftovers ───────────────────────────────────────────────────────────
+src/
+node_modules/
+dist/
+package-lock.json
+.vite/
+
+# ── OS / IDE ─────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.user
