@@ -1,0 +1,38 @@
+.App {
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.App.light {
+  background: linear-gradient(180deg, #f0f8ff 0%, #fbfeff 100%);
+  color: #163b57;
+}
+
+.App.dark {
+  background: linear-gradient(180deg, #0c2536 0%, #102c3f 100%);
+  color: #e6f3ff;
+}
+
+.dashboard-container {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.dashboard-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 320px 1fr;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-container {
+    padding: 0.75rem;
+  }
+}

@@ -1,0 +1,73 @@
+.employee-list-section {
+  padding: 1rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(30, 68, 101, 0.08);
+}
+
+.list-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.list-header h2 {
+  margin: 0;
+}
+
+.list-header input {
+  width: min(340px, 100%);
+  border: 1px solid #c8ddeb;
+  border-radius: 8px;
+  padding: 0.58rem 0.7rem;
+  font: inherit;
+}
+
+.empty-state {
+  margin: 0;
+  color: #5a758b;
+}
+
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.employee-card {
+  padding: 0.85rem;
+  border: 1px solid #dde8f1;
+  border-radius: 10px;
+  background: #fdfefe;
+}
+
+.employee-card h3 {
+  margin: 0 0 0.4rem;
+}
+
+.employee-card p {
+  margin: 0.25rem 0;
+  font-size: 0.92rem;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.card-actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.48rem 0.7rem;
+  cursor: pointer;
+  color: #fff;
+  background: #0f7fae;
+}
+
+.card-actions .delete-btn {
+  background: #d1244d;
+}

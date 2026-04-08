@@ -1,0 +1,41 @@
+.employee-form-section {
+  padding: 1rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(30, 68, 101, 0.08);
+}
+
+.employee-form-section h2 {
+  margin-top: 0;
+}
+
+.employee-form {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.employee-form input {
+  border: 1px solid #c7ddea;
+  border-radius: 8px;
+  padding: 0.62rem;
+  font: inherit;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.form-actions button {
+  border: none;
+  border-radius: 8px;
+  background: #1378b0;
+  color: #ffffff;
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.form-actions .cancel-btn {
+  background: #717f8a;
+}
